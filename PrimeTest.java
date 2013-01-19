@@ -1,10 +1,10 @@
 import java.math.*;
 
-/*
-Author: Anssi Kinnunen, aatkin@utu.fi
 
-A small program for calculating prime numbers from natural numbers in a given range.
-*/
+// Author: Anssi Kinnunen, aatkin@utu.fi
+//
+// A small program for calculating prime numbers from natural numbers in a given range.
+
 public class PrimeTest
 {
 	public static void main( String[] args )
@@ -19,7 +19,7 @@ public class PrimeTest
 		int range2 = Integer.parseInt( args[1] );
 				
 		calculatePrimes( range1, range2 );
-	} //main-method
+	}
 	
 	public static void calculatePrimes( int limitFrom, int limitTo )
 	{
@@ -35,11 +35,9 @@ public class PrimeTest
 			System.out.println( "Limits must be positive and non-zero! Limits: " + limitFrom + " " + limitTo );
 			System.exit( 0 );
 		}
-		/*
-		else
-		check every number beginning from limitFrom to limitTo whether they pass the isPrime(...) check.
-		if so, print the number.
-		*/
+
+		//check every number beginning from limitFrom to limitTo whether they pass the isPrime(...) check.
+		//if so, print the number.
 		for( int i = limitFrom; i <= limitTo; i++ )
 		{
 			if( isPrime(i) ) 
@@ -47,7 +45,7 @@ public class PrimeTest
 				System.out.println( i );
 			}
 		}
-	} //calculatePrimes-method
+	}
 	
 	public static boolean isPrime( double number )
         {
@@ -57,7 +55,7 @@ public class PrimeTest
 		double limit = Math.sqrt( number );
 		
 		//check all numbers starting from 2 to given number minus 1
-		//if given number modus integer i equals zero, number is not a prime, thus return false
+		//if given number modus integer i equals zero, number is not a prime, return false
                 for( int i = 2; i <= limit; i++ )
                 {
                         if( (int) number%i == 0 )
@@ -65,11 +63,9 @@ public class PrimeTest
                                 return false;
                         }
                 }
-		/*
-		if the number has passed all tests for all numbers before it, the number is a prime, return true
-		*/
+		//the number is a prime, return true
                 return true;
 		
-        } //isPrime-method
+        }
 	
 } //PrimeTest-class
