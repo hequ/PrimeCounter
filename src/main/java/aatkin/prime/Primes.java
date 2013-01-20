@@ -1,8 +1,8 @@
 package aatkin.prime;
 
 /**
- *  Author: Anssi Kinnunen, aatkin@utu.fi
- *  A small program for calculating prime numbers from natural numbers in a given range.
+ * Author: Anssi Kinnunen, aatkin@utu.fi
+ * A small program for calculating prime numbers from natural numbers in a given range.
  */
 
 public class Primes {
