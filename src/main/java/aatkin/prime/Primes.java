@@ -12,7 +12,6 @@ public class Primes {
             System.exit(0);
         }
 
-        PrimeCounter primeCounter = new PrimeCounter();
-        primeCounter.getPrimesForRange(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
+        PrimeCounter.getPrimesForRange(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
     }
 }

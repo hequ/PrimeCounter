@@ -4,13 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PrimeCounter {
-
-    public List<Integer> getPrimesForRange(int limitFrom, int limitTo) {
+    public static List<Integer> getPrimesForRange(int limitFrom, int limitTo) {
         validateParameters(limitFrom, limitTo);
         return calculatePrimes(limitFrom, limitTo);
     }
 
-    private List<Integer> calculatePrimes(int limitFrom, int limitTo) {
+    private static List<Integer> calculatePrimes(int limitFrom, int limitTo) {
         List<Integer> primes = new ArrayList<Integer>();
         for (int i = limitFrom; i <= limitTo; i++) {
             if (isPrime(i)) {
@@ -20,7 +19,7 @@ public class PrimeCounter {
         return primes;
     }
 
-    private void validateParameters(int limitFrom, int limitTo) {
+    private static void validateParameters(int limitFrom, int limitTo) {
         if (limitTo < limitFrom) {
             throw new IllegalArgumentException("Limits out of boundary: limitFrom (" + limitFrom + ") > limitTo (" + limitTo + ")");
         }
@@ -29,11 +28,11 @@ public class PrimeCounter {
         }
     }
 
-    private boolean isPrime(int number) {
+    private static boolean isPrime(int number) {
         return number == 1 || isNotDividable(number);
     }
 
-    private boolean isNotDividable(int number) {
+    private static boolean isNotDividable(int number) {
         for (int i = 2; i <= Math.sqrt(number); i++) {
             if (number % i == 0) {
                 return false;
