@@ -1,15 +1,23 @@
 package aatkin.prime;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PrimeCounter {
 
-    public void calculatePrimes(int limitFrom, int limitTo) {
+    public List<Integer> getPrimesForRange(int limitFrom, int limitTo) {
         validateParameters(limitFrom, limitTo);
+        return calculatePrimes(limitFrom, limitTo);
+    }
 
+    private List<Integer> calculatePrimes(int limitFrom, int limitTo) {
+        List<Integer> primes = new ArrayList<Integer>();
         for (int i = limitFrom; i <= limitTo; i++) {
             if (isPrime(i)) {
-                System.out.println(i);
+                primes.add(i);
             }
         }
+        return primes;
     }
 
     private void validateParameters(int limitFrom, int limitTo) {

@@ -16,6 +16,6 @@ public class Primes {
         int range2 = Integer.parseInt(args[1]);
 
         PrimeCounter primeCounter = new PrimeCounter();
-        primeCounter.calculatePrimes(range1, range2);
+        primeCounter.getPrimesForRange(range1, range2);
     }
 }
