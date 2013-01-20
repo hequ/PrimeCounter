@@ -29,12 +29,13 @@ public class PrimeCounter {
         }
     }
 
-    private boolean isPrime(double number) {
-        if (number == 1) return true;
-        double limit = Math.sqrt(number);
+    private boolean isPrime(int number) {
+        return number == 1 || isNotDividable(number);
+    }
 
-        for (int i = 2; i <= limit; i++) {
-            if ((int) number % i == 0) {
+    private boolean isNotDividable(int number) {
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
                 return false;
             }
         }
