@@ -3,19 +3,21 @@ package aatkin.prime;
 public class PrimeCounter {
 
     public void calculatePrimes(int limitFrom, int limitTo) {
-        if (limitTo < limitFrom) {
-            System.out.println("Limits out of boundary: limitFrom (" + limitFrom + ") > limitTo (" + limitTo + ")");
-            System.exit(0);
-        }
-        else if (limitFrom < 1 || limitTo < 1) {
-            System.out.println("Limits must be positive and non-zero! Limits: " + limitFrom + " " + limitTo);
-            System.exit(0);
-        }
+        validateParameters(limitFrom, limitTo);
 
         for (int i = limitFrom; i <= limitTo; i++) {
             if (isPrime(i)) {
                 System.out.println(i);
             }
+        }
+    }
+
+    private void validateParameters(int limitFrom, int limitTo) {
+        if (limitTo < limitFrom) {
+            throw new IllegalArgumentException("Limits out of boundary: limitFrom (" + limitFrom + ") > limitTo (" + limitTo + ")");
+        }
+        else if (limitFrom < 1 || limitTo < 1) {
+            throw new IllegalArgumentException("Limits must be positive and non-zero! Limits: " + limitFrom + " " + limitTo);
         }
     }
 
